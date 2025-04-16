@@ -1,0 +1,6 @@
+# Station Setup
+
+### Arch
+
+### MacOS
+
