@@ -6,18 +6,13 @@ SCRIPT_DIR=$(cd -- "$(dirname "$0")" && pwd)
 source "$SCRIPT_DIR/../lib.sh"
 
 if [[ "$OS" == "arch" ]]; then
-  sudo pacman -S --noconfirm --needed neovim
+  yay -S --noconfirm otf-commit-mono-nerd
 elif [[ "$os" == "macos" ]]; then
-  brew install neovim
+  brew install --cask font-commit-mono-nerd-font
 else
   echo "Unsupported OS: $os"
   exit 1
 fi
 
-clean_config_target "$HOME/.config/nvim"
-
-cd "$HOME/dotfiles"
-stow nvim
-
-echo "✅ Neovim installed."
+echo "✅ CommitMono Nerd Font installed."
 
