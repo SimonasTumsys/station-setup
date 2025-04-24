@@ -1,6 +1,3 @@
 # Station Setup
 
-### Arch
-
-### MacOS
-
+Auto-riced setup for unix
