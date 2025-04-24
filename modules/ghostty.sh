@@ -6,18 +6,18 @@ SCRIPT_DIR=$(cd -- "$(dirname "$0")" && pwd)
 source "$SCRIPT_DIR/../lib.sh"
 
 if [[ "$OS" == "arch" ]]; then
-  sudo pacman -S --noconfirm --needed neovim
+  sudo pacman -S --noconfirm --needed ghostty
 elif [[ "$os" == "macos" ]]; then
-  brew install neovim
+  brew install --cask ghostty 
 else
   echo "Unsupported OS: $os"
   exit 1
 fi
 
-clean_config_target "$HOME/.config/nvim"
+clean_config_target "$HOME/.config/ghostty"
 
 cd "$HOME/dotfiles"
-stow nvim
+stow ghostty 
 
-echo "✅ Neovim installed."
+echo "✅ Ghostty installed."
 
