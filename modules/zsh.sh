@@ -14,5 +14,6 @@ chsh -s "$(which zsh)"
 cd "$HOME/dotfiles"
 stow zsh
 
-echo "✅ Zsh installed and configured."
+echo "✅ Zsh installed."
+echo "Remember to source the stowed .zsh.global file at the start of $HOME/.zshrc"
 

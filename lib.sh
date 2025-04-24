@@ -33,9 +33,9 @@ install_aur_package() {
 
         sudo pacman -S --noconfirm --needed git base-devel
         git clone https://aur.archlinux.org/yay.git /tmp/yay
-        pushd /tmp/yay
+        pushd /tmp/yay || return
         makepkg -si --noconfirm
-        popd
+        popd || return
     fi
 
     yay -S --noconfirm "$pkg"
@@ -51,7 +51,6 @@ ensure_stow() {
 
 clean_config_target() {
     local target="$1"
-    local timestamp
     local backup_dir="$HOME/dotfiles-backup"
 
     echo "🧹 Backing up and removing existing dotfiles for $target..."
@@ -59,7 +58,7 @@ clean_config_target() {
     # Create the backup directory if it doesn't exist
     mkdir -p "$backup_dir"
 
-    target_path="$HOME/.config/$target"  # Target path in $HOME/.config
+    target_path="$HOME/$target"  # Target path in $HOME/.config
 
     # Check if the file or directory exists in $HOME/.config
     if [ -e "$target_path" ] || [ -L "$target_path" ]; then
@@ -72,3 +71,4 @@ clean_config_target() {
         mv "$target_path" "$backup_dir/$target"  
     fi
 }
+
