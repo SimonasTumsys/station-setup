@@ -14,7 +14,7 @@ else
   exit 1
 fi
 
-clean_config_target "$HOME/.config/nvim"
+clean_config_target "nvim" "$HOME/.config"
 
 cd "$HOME/dotfiles"
 stow nvim

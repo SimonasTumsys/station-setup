@@ -14,7 +14,7 @@ else
   exit 1
 fi
 
-clean_config_target "$HOME/.config/ghostty"
+clean_config_target "ghostty" "$HOME/.config"
 
 cd "$HOME/dotfiles"
 stow ghostty 

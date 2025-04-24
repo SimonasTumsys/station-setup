@@ -14,7 +14,7 @@ else
   exit 1
 fi
 
-clean_config_target "$HOME/.config/starship"
+clean_config_target "starship" "$HOME/.config"
 
 cd "$HOME/dotfiles"
 stow starship

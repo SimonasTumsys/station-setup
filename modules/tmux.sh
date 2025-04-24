@@ -14,7 +14,7 @@ else
   exit 1
 fi
 
-clean_config_target "$HOME/.tmux.conf"
+clean_config_target ".tmux.conf" "$HOME"
 
 cd "$HOME/dotfiles"
 stow tmux
