@@ -20,5 +20,4 @@ cd "$HOME/dotfiles"
 stow starship
 
 echo "✅ Starhip installed."
-echo 'Remember to add eval "$(starship init zsh)" to $HOME/.zshrc'
 
