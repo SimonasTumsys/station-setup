@@ -16,8 +16,7 @@ fi
 
 clean_config_target "ghostty" "$HOME/.config"
 
-cd "$HOME/dotfiles"
-stow ghostty 
+stow_from_dotfiles ghostty
 
 echo "✅ Ghostty installed."
 

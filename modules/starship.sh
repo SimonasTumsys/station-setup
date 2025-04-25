@@ -14,10 +14,9 @@ else
   exit 1
 fi
 
-clean_config_target "starship" "$HOME/.config"
+clean_config_target "starship.toml" "$HOME/.config"
 
-cd "$HOME/dotfiles"
-stow starship
+stow_from_dotfiles starship
 
 echo "✅ Starhip installed."
 

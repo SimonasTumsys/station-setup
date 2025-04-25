@@ -7,19 +7,29 @@ source "$SCRIPT_DIR/../lib.sh"
 
 if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed zsh
-elif [[ "$os" == "macos" ]]; then
+elif [[ "$OS" == "macos" ]]; then
   brew install zsh
 else
-  echo "Unsupported OS: $os"
+  echo "Unsupported OS: $OS"
   exit 1
 fi
 
-chsh -s "$(which zsh)"
+if [[ "$OS" == "macos" ]]; then
+  echo "🔐 macOS — please update shell manually:"
+  echo "    chsh -s $(which zsh)"
+else
+  echo "🔧 Changing shell to zsh for $USER..."
+  sudo chsh -s "$(which zsh)" "$USER"
+fi
 
-cd "$HOME/dotfiles"
-stow zshrc
+clean_config_target ".zshrc" "$HOME"
+clean_config_target ".zshrc.global" "$HOME"
+clean_config_target ".zsh" "$HOME"
 
-echo 'source "$HOME/.zshrc.global"' > "$HOME/.zshrc"
+stow_from_dotfiles zshrc
+
+# create a barebones .zshrc
+echo -e '# keep this at the top\nsource "$HOME/.zshrc.global"' > "$HOME/.zshrc"
 
 echo "✅ Zsh installed."
 
