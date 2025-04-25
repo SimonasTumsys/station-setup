@@ -42,6 +42,8 @@ fi
 
 chmod +x modules/*.sh
 
+sudo -v
+
 # CommitMono Nerd Font
 install_module commit_mono "$OS"
 
@@ -62,4 +64,4 @@ install_module tmux "$OS"
 
 
 echo "✅ Installation complete!"
-
+echo "🚪 Logout and log back in to fully apply changes!"

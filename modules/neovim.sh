@@ -16,8 +16,7 @@ fi
 
 clean_config_target "nvim" "$HOME/.config"
 
-cd "$HOME/dotfiles"
-stow nvim
+stow_from_dotfiles nvim
 
 echo "✅ Neovim installed."
 

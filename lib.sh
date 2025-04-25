@@ -1,5 +1,13 @@
 #!/bin/bash
 
+stow_from_dotfiles() {
+  local target="$1"
+  cd $HOME/dotfiles
+
+  echo "🔗 Creating symlinked dotfile for target '$target'"
+  stow $target
+}
+
 ensure_yay() {
   if ! command -v yay &> /dev/null; then
     echo "⚠️ 'yay' not found. Installing yay..."
