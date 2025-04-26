@@ -63,6 +63,8 @@ install_module tmux "$OS"
 # rofi
 install_module rofi "$OS"
 
+# picom
+install_module picom "$OS"
 
 echo "✅ Installation complete!"
 echo "🚪 Logout and log back in to fully apply changes!"
