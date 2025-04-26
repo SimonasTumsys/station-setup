@@ -3,7 +3,6 @@ set -e
 
 SCRIPT_DIR=$(cd -- "$(dirname "$0")" && pwd)
 
-# Detect OS
 detect_os() {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     if [ -f /etc/arch-release ]; then
@@ -31,7 +30,6 @@ install_module() {
   fi
 }
 
-# Detect OS and exit early if it is non-arch or unknown
 OS=$(detect_os)
 echo "🖥 Detected OS: $OS"
 
@@ -56,12 +54,16 @@ install_module starship "$OS"
 # zsh
 install_module zsh "$OS"
 
-# neovim 
+# neovim
 install_module neovim "$OS"
 
 # tmux
 install_module tmux "$OS"
 
+# rofi
+install_module rofi "$OS"
+
 
 echo "✅ Installation complete!"
 echo "🚪 Logout and log back in to fully apply changes!"
+
