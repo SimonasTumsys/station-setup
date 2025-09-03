@@ -7,8 +7,11 @@ source "$SCRIPT_DIR/../lib.sh"
 
 if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed ghostty
-elif [[ "$os" == "macos" ]]; then
+elif [[ "$OS" == "macos" ]]; then
   brew install --cask ghostty 
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf copr enable scottames/ghostty
+  sudo dnf install ghostty
 else
   echo "Unsupported OS: $os"
   exit 1

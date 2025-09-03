@@ -7,8 +7,11 @@ source "$SCRIPT_DIR/../lib.sh"
 
 if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed starship
-elif [[ "$os" == "macos" ]]; then
+elif [[ "$OS" == "macos" ]]; then
   brew install starship
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf copr enable atim/starship
+  sudo dnf install starship
 else
   echo "Unsupported OS: $os"
   exit 1

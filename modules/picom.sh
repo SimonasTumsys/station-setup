@@ -7,8 +7,10 @@ source "$SCRIPT_DIR/../lib.sh"
 
 if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed picom
-elif [[ "$os" == "macos" ]]; then
+elif [[ "$OS" == "macos" ]]; then
   echo "Picom will not install on MacOS at this time"
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf install picom
 else
   echo "Unsupported OS: $os"
   exit 1

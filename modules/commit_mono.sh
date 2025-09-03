@@ -7,8 +7,11 @@ source "$SCRIPT_DIR/../lib.sh"
 
 if [[ "$OS" == "arch" ]]; then
   yay -S --noconfirm otf-commit-mono-nerd
-elif [[ "$os" == "macos" ]]; then
+elif [[ "$OS" == "macos" ]]; then
   brew install --cask font-commit-mono-nerd-font
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf copr enable aquacash5/nerd-fonts
+  sudo dnf install fira-code-nerd-fonts
 else
   echo "Unsupported OS: $os"
   exit 1

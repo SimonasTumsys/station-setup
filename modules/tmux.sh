@@ -7,8 +7,10 @@ source "$SCRIPT_DIR/../lib.sh"
 
 if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed tmux
-elif [[ "$os" == "macos" ]]; then
+elif [[ "$OS" == "macos" ]]; then
   brew install tmux
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf install tmux
 else
   echo "Unsupported OS: $os"
   exit 1

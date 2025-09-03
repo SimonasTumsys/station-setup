@@ -7,6 +7,8 @@ detect_os() {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     if [ -f /etc/arch-release ]; then
       echo "arch"
+    elif [ -f /etc/fedora-release ]; then
+      echo "fedora"
     else
       echo "linux"  # fallback for other distros
     fi
@@ -43,13 +45,13 @@ chmod +x modules/*.sh
 sudo -v
 
 # CommitMono Nerd Font
-install_module commit_mono "$OS"
+#install_module commit_mono "$OS"
 
 # ghostty
-install_module ghostty "$OS"
+#install_module ghostty "$OS"
 
 # starship
-install_module starship "$OS"
+#install_module starship "$OS"
 
 # zsh
 install_module zsh "$OS"
@@ -61,10 +63,10 @@ install_module neovim "$OS"
 install_module tmux "$OS"
 
 # rofi
-install_module rofi "$OS"
+#install_module rofi "$OS"
 
 # picom
-install_module picom "$OS"
+#install_module picom "$OS"
 
 echo "✅ Installation complete!"
 echo "🚪 Logout and log back in to fully apply changes!"
