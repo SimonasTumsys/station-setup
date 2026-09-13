@@ -9,7 +9,7 @@ if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed ghostty
 elif [[ "$os" == "macos" ]]; then
   brew install --cask ghostty 
-elif [[ "$os" == "ubuntu" ]]; then
+elif [[ "$OS" == "ubuntu" ]]; then
   sudo apt install ghostty
 else
   echo "Unsupported OS: $os"

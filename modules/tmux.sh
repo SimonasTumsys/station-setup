@@ -9,7 +9,7 @@ if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed tmux
 elif [[ "$os" == "macos" ]]; then
   brew install tmux
-elif [[ "$os" == "ubuntu" ]]; then
+elif [[ "$OS" == "ubuntu" ]]; then
   sudo apt install tmux
 else
   echo "Unsupported OS: $os"

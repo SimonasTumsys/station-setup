@@ -53,7 +53,7 @@ chmod +x modules/*.sh
 sudo -v
 
 # CommitMono Nerd Font
-install_module commit_mono "$OS"
+#install_module commit_mono "$OS"
 
 # ghostty
 install_module ghostty "$OS"
