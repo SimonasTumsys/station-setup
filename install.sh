@@ -5,10 +5,20 @@ SCRIPT_DIR=$(cd -- "$(dirname "$0")" && pwd)
 
 detect_os() {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    if [ -f /etc/arch-release ]; then
+    if [ -r /etc/os-release ]; then
+      # shellcheck disable=SC1091
+      . /etc/os-release
+      case " $ID $ID_LIKE " in
+        *" ubuntu "*) echo "ubuntu" ;;
+        *" debian "*) echo "debian" ;;
+        *" arch "*)   echo "arch" ;;
+        *" fedora "*) echo "fedora" ;;
+        *)            echo "linux" ;;
+      esac
+    elif [ -f /etc/arch-release ]; then
       echo "arch"
     else
-      echo "linux"  # fallback for other distros
+      echo "linux"
     fi
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo "macos"
