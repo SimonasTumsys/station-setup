@@ -9,6 +9,8 @@ if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed picom
 elif [[ "$os" == "macos" ]]; then
   echo "Picom will not install on MacOS at this time"
+elif [[ "$os" == "ubuntu" ]]; then
+  sudo apt install picom
 else
   echo "Unsupported OS: $os"
   exit 1
