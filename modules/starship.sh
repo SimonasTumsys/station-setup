@@ -9,6 +9,8 @@ if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed starship
 elif [[ "$os" == "macos" ]]; then
   brew install starship
+elif [[ "$os" == "ubuntu" ]]; then
+  sudo apt install starship
 else
   echo "Unsupported OS: $os"
   exit 1

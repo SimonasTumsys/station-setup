@@ -9,6 +9,8 @@ if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed zsh
 elif [[ "$OS" == "macos" ]]; then
   brew install zsh
+elif [[ "$OS" == "ubuntu" ]]; then
+  sudo apt install zsh
 else
   echo "Unsupported OS: $OS"
   exit 1

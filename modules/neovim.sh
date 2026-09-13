@@ -9,6 +9,8 @@ if [[ "$OS" == "arch" ]]; then
   sudo pacman -S --noconfirm --needed neovim
 elif [[ "$os" == "macos" ]]; then
   brew install neovim
+elif [[ "$os" == "ubuntu" ]]; then
+  sudo apt install neovim
 else
   echo "Unsupported OS: $os"
   exit 1
