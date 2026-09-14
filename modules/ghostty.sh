@@ -11,6 +11,8 @@ elif [[ "$os" == "macos" ]]; then
   brew install --cask ghostty 
 elif [[ "$OS" == "ubuntu" ]]; then
   sudo apt install ghostty
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf install ghostty
 else
   echo "Unsupported OS: $os"
   exit 1

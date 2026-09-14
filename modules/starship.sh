@@ -11,6 +11,8 @@ elif [[ "$os" == "macos" ]]; then
   brew install starship
 elif [[ "$OS" == "ubuntu" ]]; then
   sudo apt install starship
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf install starship
 else
   echo "Unsupported OS: $os"
   exit 1

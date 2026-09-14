@@ -11,6 +11,8 @@ elif [[ "$os" == "macos" ]]; then
   echo "Picom will not install on MacOS at this time"
 elif [[ "$OS" == "ubuntu" ]]; then
   sudo apt install picom
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf install picom
 else
   echo "Unsupported OS: $os"
   exit 1

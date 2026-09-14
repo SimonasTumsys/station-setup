@@ -11,6 +11,8 @@ elif [[ "$os" == "macos" ]]; then
   brew install tmux
 elif [[ "$OS" == "ubuntu" ]]; then
   sudo apt install tmux
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf install tmux
 else
   echo "Unsupported OS: $os"
   exit 1
