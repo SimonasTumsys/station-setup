@@ -11,6 +11,8 @@ elif [[ "$os" == "macos" ]]; then
   brew install neovim
 elif [[ "$OS" == "ubuntu" ]]; then
   sudo apt install neovim
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf install neovim
 else
   echo "Unsupported OS: $os"
   exit 1

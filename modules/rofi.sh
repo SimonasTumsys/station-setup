@@ -12,6 +12,8 @@ elif [[ "$os" == "macos" ]]; then
   echo "Rofi will not install on MacOS at this time"
 elif [[ "$OS" == "ubuntu" ]]; then
   sudo apt install rofi
+elif [[ "$OS" == "fedora" ]]; then
+  sudo dnf install rofi
 else
   echo "Unsupported OS: $os"
   exit 1
